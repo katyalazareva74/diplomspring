@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<meta charset="UTF-8">
+<title>Покупка книги</title>
+<link th:href="@{/stylef.css}" rel="stylesheet" />
+</head>
+<body>
+<h3>Покупка книги</h3>
+<form action="#" th:action="@{/accounts/payment}" th:object="${order}" method="post">
+    <label for="id">Номер книги</label>
+    <input type="number" th:field="*{bookId}" id="id" placeholder="Номер книги">
+    <br/>
+    <label for="quantity">Количество книг</label>
+    <input type="number" th:field="*{quantityBooks}" id="quantity" placeholder="Количество книг">
+    <br/>
+    <label for="accountName">Имя Покупателя</label>
+    <input type="text" th:field="*{accountName}" id="accountName" placeholder="Имя Покупателя">
+    <br/>
+    <label for="amount">Сумма на счете</label>
+    <input type="number" th:field="*{amount}" id="amount" placeholder="Сумма на счете">
+    <br/>
+    <input type="submit" value="Купить книгу">
+</form>
+<p><a href="/books">Вернуться назад</a></p>
+</body>
+</html>

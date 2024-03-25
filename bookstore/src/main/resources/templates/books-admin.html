@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>КНИЖНЫЙ МАГАЗИН</title>
+    <link th:href="@{/styleadmin.css}" rel="stylesheet" />
+</head>
+
+<body>
+<h1>КНИЖНЫЙ МАГАЗИН</h1>
+<div th:switch="${books}">
+    <h2 th:case="null">Книги не найдены!</h2>
+    <div th:case="*">
+        <table>
+            <tr>
+                <th>Id книги</th>
+                <th>Название книги</th>
+                <th>Автор</th>
+                <th>Описание</th>
+                <th>Количество</th>
+                <th>Цена</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr th:each="s: ${books}" >
+                <td th:text="${s.id}"></td>
+                <td th:text="${s.title}"></td>
+                <td th:text="${s.author}"></td>
+                <td th:text="${s.description}"></td>
+                <td th:text="${s.quantity}"></td>
+                <td th:text="${s.price}"></td>
+                <td><a th:href="@{/books/book-update/{id}(id=${s.id})}">Редактировать</a></td>
+                <td><a th:href="@{/books/book-delete/{id}(id=${s.id})}">Удалить</a></td>
+            </tr>
+        </table>
+    </div>
+    <p><a href="/books/book-create">Новая книга</a></p>
+</div>
+</body>
+</html>

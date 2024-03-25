@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<meta charset="UTF-8">
+<title>Редактировать счет</title>
+<link th:href="@{/stylefp.css}" rel="stylesheet" />
+</head>
+<body>
+<h3>Редактировать счет</h3>
+<form action="#" th:action="@{/admin/account-update}" th:object="${account}" method="post">
+    <label for="id">ID счета</label>
+    <input readonly type="number" th:field="*{id}" id="id" placeholder="ID счета">
+    <br/>
+    <label for="name">Имя покупателя</label>
+    <input type="text" th:field="*{name}" id="name" placeholder="Имя покупателя">
+    <br/>
+    <label for="сумма">Сумма на счете</label>
+    <input type="number" th:field="*{amount}" id="сумма" placeholder="Сумма на счете">
+    <br/>
+    <input type="submit" value="Редактировать счет">
+</form>
+<p><a href="/admin">Вернуться назад</a></p>
+</body>
+</html>

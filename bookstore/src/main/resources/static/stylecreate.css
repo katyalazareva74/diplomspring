@@ -1,0 +1,30 @@
+body {
+  background:url("edit.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+form{
+    color: blue;
+    font-size: 20px;
+    font-weight: bolder;
+}
+button{
+    background: yellow;
+    color: blue;
+    font-size: 20px;
+}
+input{
+    background: #fcf4a3;
+    color: blue;
+    font-size: 20px;
+}
+a, h3{
+    color: blue;
+    font-size: 20px;
+    font-weight: bolder;
+    #fcf4a3;
+}

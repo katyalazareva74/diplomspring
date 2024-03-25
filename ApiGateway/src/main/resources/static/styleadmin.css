@@ -1,0 +1,31 @@
+body {
+  background:url("bookadmin.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+h1, h3, a, p{
+    text-align: center;
+    color: blue;
+    font-size: 25px;
+    font-weight: bolder;
+ }
+
+table,
+th, td{
+    border:2px solid black;
+    border-collapse: collapse;
+        }
+td{
+    background:  #fcf4a3;
+    font-size: 25px;
+}
+
+table {
+    background: #fcf4a3;
+    font-size: 25px;
+    table-align: center;
+    }

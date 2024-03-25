@@ -1,0 +1,28 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: service_payment
+  datasource:
+    url: jdbc:postgresql://localhost:5433/accounts
+    username: lazareva
+    password: supersecret
+    driver-class-name: org.postgresql.Driver
+    initialization-mode: always
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: 'metrics,prometheus,health'

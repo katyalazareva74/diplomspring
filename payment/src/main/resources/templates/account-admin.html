@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Счета покупателей</title>
+        <link th:href="@{/stylep.css}" rel="stylesheet" />
+</head>
+
+<body>
+<h1>СЧЕТА ПОКУПАТЕЛЕЙ</h1>
+<div th:switch="${accounts}">
+    <h2 th:case="null">No accounts found!</h2>
+    <div th:case="*">
+        <table>
+            <tr>
+                <th>Id счета</th>
+                <th>Имя покупателя</th>
+                <th>Сумма на счете</th>
+            </tr>
+            <tr th:each="s: ${accounts}" >
+                <td th:text="${s.id}"></td>
+                <td th:text="${s.name}"></td>
+                <td th:text="${s.amount}"></td>
+                <td><a th:href="@{/admin/account-update/{id}(id=${s.id})}">Редактировать</a></td>
+                <td><a th:href="@{/admin/account-delete/{id}(id=${s.id})}">Удалить</a></td>
+            </tr>
+        </table>
+    </div>
+    <p><a href="/admin/account-create">Новый счет</a></p>
+</div>
+</body>
+</html>

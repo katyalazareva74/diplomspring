@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: bookstore
+  datasource:
+    url: jdbc:postgresql://localhost:5432/books
+    username: lazareva
+    password: secret
+    driver-class-name: org.postgresql.Driver
+    initialization-mode: always
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: 'metrics,prometheus,health'

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>КНИЖНЫЙ МАГАЗИН</title>
+    <link th:href="@{/style.css}" rel="stylesheet" />
+<!--</head>-->
+<!--<style>-->
+<!--    body{-->
+<!--        background-image: url("book.png");-->
+<!--    }-->
+<!--</style>-->
+</head>
+<body>
+<h1>МАГАЗИН ЭЗОТЕРИЧЕСКОЙ ЛИТЕРАТУРЫ</h1>
+<div th:switch="${books}">
+    <h2 th:case="null">Книги не найдены!</h2>
+    <div th:case="*">
+        <table>
+            <tr>
+                <th>Id книги</th>
+                <th>Название книги</th>
+                <th>Автор</th>
+                <th>Описание</th>
+                <th>Количество</th>
+                <th>Цена</th>
+            </tr>
+            <tr th:each="s: ${books}" >
+                <td th:text="${s.id}"></td>
+                <td th:text="${s.title}"></td>
+                <td th:text="${s.author}"></td>
+                <td th:text="${s.description}"></td>
+                <td th:text="${s.quantity}"></td>
+                <td th:text="${s.price}"></td>
+                <td><a th:href="@{/accounts/payment/{id}(id=${s.id})}">Купить книгу</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>

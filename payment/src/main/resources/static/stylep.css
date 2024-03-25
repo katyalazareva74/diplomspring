@@ -1,0 +1,33 @@
+body {
+  background:url("accounts.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+h1, h3, a, p {
+    text-align: center;
+    color: blue;
+    font-size: 25px;
+    font-weight: bolder;
+    }
+table,
+th, td{
+    border:2px solid black;
+    border-collapse: collapse;
+        }
+td{
+    background:  #7fffd4;
+    font-size: 20px;
+}
+
+table {
+    background: #7fffd4;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    table-align: center;
+    }

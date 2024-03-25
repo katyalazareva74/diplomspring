@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Новый счет</title>
+    <link th:href="@{/stylefp.css}" rel="stylesheet" />
+</head>
+<body>
+<h3>Новый счет</h3>
+<form action="#" th:action="@{/admin/account-create}" th:object="${account}" method="post">
+    <label for="name">Имя покупателя</label>
+    <input type="text" th:field="*{name}" id="name" placeholder="Имя покупателя">
+    <label for="сумма">Сумма на счете</label>
+    <input type="number" th:field="*{amount}" id="сумма" placeholder="Сумма на счете">
+    <input type="submit" value="Новый счет">
+</form>
+<p><a href="/admin">Вернуться назад</a></p>
+</body>
+</html>
